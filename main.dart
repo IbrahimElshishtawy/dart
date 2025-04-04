@@ -20,9 +20,9 @@ void main() {
     height: 20,
     weight: 1.80,
   );
-  h1.setnumberoflegs(1);
-  print(h1.getnumberoflegs());
-  h1.setnumberodarm(-5);
-  print(h1.getnumberofarm());
+  h1.numberofarm = 2;
+  h1.numberoflegs = 2;
+  print("number of arm is ${h1.numberofarm}");
+  print("number of legs is ${h1.numberoflegs}");
   h1.walk();
 }

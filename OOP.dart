@@ -11,6 +11,34 @@ class human {
   String? phone;
   double? height;
   double? weight;
+
+  set numberofarm(int numberofarm) {
+    // setter use to set the value of privte variable
+    if (numberofarm <= 2 && numberofarm >= 0) {
+      //if the number of arm is less than 2 or greater than 0
+      this._numberofarm = numberofarm;
+    }
+  }
+
+  set numberoflegs(int numberoflegs) {
+    // setter use to set the value of privte variable
+    if (numberoflegs <= 2 && numberoflegs >= 0) {
+      //if the number of legs is less than 2 or greater than 0
+      this._numberoflegs = numberoflegs;
+    }
+  }
+
+  int get numberofarm {
+    // getter use to get the value of private variable
+    return this._numberofarm!;
+  }
+
+  int get numberoflegs {
+    // getter use to get the value of private variable
+    return this._numberoflegs!;
+  }
+
+  /*
   //create the method number of arm input the value of arm
   void setnumberodarm(int numberofarm) {
     if (numberofarm <= 2 && numberofarm >= 0) {
@@ -18,7 +46,6 @@ class human {
       this._numberofarm = numberofarm;
     }
   }
-
   //create the method number of arm input the value of legs
   void setnumberoflegs(int numberoflegs) {
     if (numberoflegs <= 2 && numberoflegs >= 0) {
@@ -26,17 +53,15 @@ class human {
       this._numberoflegs = numberoflegs;
     }
   }
-
   //create the method number of arm output the value of arm
   int getnumberofarm() {
     return this._numberofarm!;
   }
-
   //create the method number of legs output the value of legs
   int getnumberoflegs() {
     return this._numberoflegs!;
   }
-
+  */
   //create the constructor of the class human
   human({
     String? name,
