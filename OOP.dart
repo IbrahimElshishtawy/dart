@@ -1,4 +1,66 @@
 // OOP.dart
+void printoop() {
+  human h1 = human(
+    name: "hima",
+    email: "shishtawyhima@gmail.com",
+    phone: "01012472095",
+    height: 20,
+    weight: 1.80,
+  );
+  try {
+    h1.numberofarm = 3;
+    h1.numberoflegs = 5;
+  } catch (e) {
+    h1.numberofarm = 2;
+    h1.numberoflegs = 2;
+    print(e);
+  }
+  print("number of arm is ${h1.numberofarm}");
+  print("number of legs is ${h1.numberoflegs}");
+  h1.walk();
+  animal a1 = dog("dog");
+  a1.eat();
+  dog d1 = dog("dog");
+  d1.eat();
+  // ignore: unused_local_variable
+  List<animal> animals = [a1, d1];
+  for (var animal in animals) {
+    animal.eat();
+  }
+
+  FootballPlayer hima = FootballPlayer(
+    speed: 143,
+    numberofgoals: 234,
+    name: "hima",
+    haircolor: "black",
+  );
+  print(hima.haircolor);
+  //object of the class human
+  List<Object> list = [hima, h1, a1, d1, human()];
+
+  for (var object in list) {
+    if (object is human) {
+      print("this is the class human");
+      print(object.name);
+    } else if (object is animal) {
+      print("this is the class animal");
+      print(object.name);
+    } else if (object is dog) {
+      print("this is the class dog");
+      print(object.name);
+    } else if (object is cat) {
+      print("this is the class cat");
+      print(object.name);
+    } else if (object is tiger) {
+      print("this is the class tiger");
+      print(object.name);
+    } else if (object is lion) {
+      print("this is the class lion");
+      print(object.name);
+    }
+  }
+}
+
 class human {
   //under score _numberofarm = 2;
   //this is private variable
@@ -11,6 +73,8 @@ class human {
   double? height;
   double? weight;
   String? haircolor;
+
+  int numberodobject = 0;
 
   set numberofarm(int numberofarm) {
     // setter use to set the value of privte variable
@@ -88,6 +152,21 @@ class human {
     this.weight = weight;
     this._numberofarm = numberofarm;
     this._numberoflegs = numberoflegs;
+  }
+
+  int get numberofarm1 {
+    // getter use to get the value of private variable
+    return this._numberofarm!;
+  }
+
+  int get numberoflegs1 {
+    // getter use to get the value of private variable
+    return this._numberoflegs!;
+  }
+
+  numberofobject() {
+    //this is the method that return the number of object
+    return numberodobject++;
   }
 
   void walk() {
@@ -199,4 +278,36 @@ class student {
 @override
 String toString() {
   return "this is the constructor of the class student";
+}
+
+class Emplyee {
+  void work() {
+    print("the emplyee is working");
+  }
+}
+
+class ITEngineer with breakTime {
+  int takeBreak() {
+    return 0;
+  }
+}
+
+class HR with breakTime, breakTime2 {
+  int takeBreak() {
+    return 1;
+  }
+}
+
+class Manager with breakTime, breakTime2 {}
+
+//mixin goals بيكون موجود في كلاس تاني
+mixin breakTime {
+  int takeBreak() {
+    return 3;
+  }
+}
+mixin breakTime2 {
+  int takeBreak() {
+    return 4;
+  }
 }
