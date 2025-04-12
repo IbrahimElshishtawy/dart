@@ -1,5 +1,4 @@
 // OOP.dart
-
 class human {
   //under score _numberofarm = 2;
   //this is private variable
@@ -11,6 +10,7 @@ class human {
   String? phone;
   double? height;
   double? weight;
+  String? haircolor;
 
   set numberofarm(int numberofarm) {
     // setter use to set the value of privte variable
@@ -75,9 +75,11 @@ class human {
     String? phone,
     double? height,
     double? weight,
+
     int numberofarm = 2,
     //this is the default value of the number of arm
     int numberoflegs = 2,
+    String? haircolor,
   }) {
     this.name = name;
     this.email = email;
@@ -110,7 +112,10 @@ class animal {
 //this extends the class animal
 class dog extends animal {
   dog(super.name);
+  // override the method eat in the class animal
+  //this is the method that override the method in the class animal
   @override
+  int numberoflibs = 6;
   void eat() {
     print("dog eating");
   }
@@ -123,6 +128,10 @@ class dog extends animal {
 class cat extends animal {
   cat(super.name);
 
+  void eat() {
+    print("cat eating");
+  }
+
   void meow() {
     print("meowing");
   }
@@ -130,6 +139,10 @@ class cat extends animal {
 
 class tiger extends animal {
   tiger(super.name);
+  void eat() {
+    print("tiger eating");
+  }
+
   void roar() {
     print("roaring");
   }
@@ -138,7 +151,52 @@ class tiger extends animal {
 class lion extends animal {
   lion(super.name);
 
+  void eat() {
+    print("lion eating");
+  }
+
   void roar() {
     print("roaring");
   }
+}
+
+// learn super constructor in dart
+class FootballPlayer extends human {
+  int? speed;
+  int? numberofgoals;
+
+  FootballPlayer({
+    this.speed,
+    this.numberofgoals,
+    String? name,
+    String? haircolor,
+  }) : super(haircolor: haircolor, name: name) {
+    //this is the constructor of the class FootballPlayer
+    //this.haircolor = haircolor;
+    //this.name = name;
+    {
+      this.haircolor = haircolor;
+      this.name = name;
+      print("this is the constructor of the class FootballPlayer");
+    }
+  }
+}
+
+class student {
+  int? id;
+  bool? UptoNextLevel;
+
+  student({this.id, this.UptoNextLevel}) {
+    //this is the constructor of the class student
+    print("this is the constructor of the class student");
+  }
+  student.faild(this.id) {
+    UptoNextLevel = false;
+    print("this is the constructor of the class student faild");
+  }
+}
+
+@override
+String toString() {
+  return "this is the constructor of the class student";
 }

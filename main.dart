@@ -24,8 +24,21 @@ void main() {
   print("number of arm is ${h1.numberofarm}");
   print("number of legs is ${h1.numberoflegs}");
   h1.walk();
-  animal a1 = animal("dog");
+  animal a1 = dog("dog");
   a1.eat();
   dog d1 = dog("dog");
   d1.eat();
+  // ignore: unused_local_variable
+  List<animal> animals = [a1, d1];
+  for (var animal in animals) {
+    animal.eat();
+  }
+
+  FootballPlayer hima = FootballPlayer(
+    speed: 143,
+    numberofgoals: 234,
+    name: "hima",
+    haircolor: "black",
+  );
+  print(hima.haircolor);
 }
